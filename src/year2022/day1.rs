@@ -12,7 +12,7 @@ fn part1() {
 
     let largest_calories_sum = find_largest_calories_sum(&raw_lines);
 
-    println!("The elf carrying the most calories is carrying {largest_calories_sum} calories.")
+    println!("Part 1: The elf carrying the most calories is carrying {largest_calories_sum} calories.")
 }
 
 fn part2() {
@@ -24,7 +24,7 @@ fn part2() {
 
     let sum_of_top_3_calorie_sums: u32 = calorie_sums_vec.iter().rev().take(3).sum();
 
-    println!("The sum of the top 3 calorie sums is {sum_of_top_3_calorie_sums}")
+    println!("Part 2: The sum of the top 3 calorie sums is {sum_of_top_3_calorie_sums}")
 }
 
 fn find_largest_calories_sum(input_vec: &Vec<String>) -> u32 {

@@ -15,7 +15,7 @@ fn part1() {
     //code to solve
     let answer = String::from("answer");
 
-    println!("answer: {answer}")
+    println!("Part 1: answer: {answer}")
 }
 
 fn part2() {
@@ -24,5 +24,5 @@ fn part2() {
     //code to solve
     let answer = String::from("answer");
 
-    println!("answer: {answer}")
+    println!("Part 2: answer: {answer}")
 }

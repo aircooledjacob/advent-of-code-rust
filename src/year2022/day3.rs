@@ -27,7 +27,7 @@ fn part1() {
         sum_of_duplicate_priorities += u32::from(duplicate_priorities.iter().sum::<u8>());
     }
 
-    println!("{sum_of_duplicate_priorities}")
+    println!("Part 1: {sum_of_duplicate_priorities}")
 }
 
 fn part2() {
@@ -49,7 +49,7 @@ fn part2() {
         sum_of_badge_priorities += u32::from(badge_priorities.iter().sum::<u8>());
     }
 
-    println!("{sum_of_badge_priorities}")
+    println!("Part 2: {sum_of_badge_priorities}")
 }
 
 fn parse_items_to_priorities(items: &HashSet<char>) -> HashSet<u8> {

@@ -29,7 +29,7 @@ fn part1() {
         }
     }
 
-    println!("number of section assignments that are fully overlapped: {fully_contained_count}");
+    println!("Part 1: number of section assignments that are fully overlapped: {fully_contained_count}");
 }
 
 fn part2() {
@@ -53,7 +53,7 @@ fn part2() {
         }
     }
 
-    println!("number of section assignments that have overlapping assignments: {overlapping_assignments}");
+    println!("Part 2: number of section assignments that have overlapping assignments: {overlapping_assignments}");
 }
 
 fn ranges_can_fit_within_another(

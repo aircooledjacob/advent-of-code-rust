@@ -14,7 +14,7 @@ fn part1() {
 
     let score = calculate_score(&tuple_vec);
 
-    println!("Your final score is {score}")
+    println!("Part 1: Your final score is {score}")
 }
 
 fn part2() {
@@ -42,7 +42,7 @@ fn part2() {
 
     let score = calculate_score(&converted_tuple_vec);
 
-    println!("Your final score is {score}")
+    println!("Part 2: Your final score is {score}")
 }
 
 fn parse_lines_to_char_tuples(raw_lines_as_string: &Vec<String>) -> Vec<(char, char)> {
