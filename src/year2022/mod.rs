@@ -1,4 +1,3 @@
-
 use inquire::Select;
 
 mod day1;

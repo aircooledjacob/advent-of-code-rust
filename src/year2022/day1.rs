@@ -12,7 +12,9 @@ fn part1() {
 
     let largest_calories_sum = find_largest_calories_sum(&raw_lines);
 
-    println!("Part 1: The elf carrying the most calories is carrying {largest_calories_sum} calories.")
+    println!(
+        "Part 1: The elf carrying the most calories is carrying {largest_calories_sum} calories."
+    )
 }
 
 fn part2() {

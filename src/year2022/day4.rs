@@ -29,7 +29,9 @@ fn part1() {
         }
     }
 
-    println!("Part 1: number of section assignments that are fully overlapped: {fully_contained_count}");
+    println!(
+        "Part 1: number of section assignments that are fully overlapped: {fully_contained_count}"
+    );
 }
 
 fn part2() {
