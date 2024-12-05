@@ -4,7 +4,12 @@ use std::ops::RangeInclusive;
 
 static INPUT_TXT: &str = r".\inputs\year2022\day4.txt";
 
-pub fn part1() {
+pub fn run() {
+    part1();
+    part2();
+}
+
+fn part1() {
     let raw_lines = common::read_file_to_vec_of_strings(&INPUT_TXT);
 
     let mut fully_contained_count = 0;
@@ -27,7 +32,7 @@ pub fn part1() {
     println!("number of section assignments that are fully overlapped: {fully_contained_count}");
 }
 
-pub fn part2() {
+fn part2() {
     let raw_lines = common::read_file_to_vec_of_strings(&INPUT_TXT);
 
     let re: Regex = Regex::new(r"[,\-]").unwrap();

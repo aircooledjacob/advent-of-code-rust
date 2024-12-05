@@ -2,7 +2,12 @@ use crate::common;
 
 static INPUT_TXT: &str = r".\inputs\year2022\day1.txt";
 
-pub fn part1() {
+pub fn run() {
+    part1();
+    part2();
+}
+
+fn part1() {
     let raw_lines = common::read_file_to_vec_of_strings(&INPUT_TXT);
 
     let largest_calories_sum = find_largest_calories_sum(&raw_lines);
@@ -10,7 +15,7 @@ pub fn part1() {
     println!("The elf carrying the most calories is carrying {largest_calories_sum} calories.")
 }
 
-pub fn part2() {
+fn part2() {
     let raw_lines = common::read_file_to_vec_of_strings(&INPUT_TXT);
 
     let mut calorie_sums_vec = calculate_calorie_sums(&raw_lines);

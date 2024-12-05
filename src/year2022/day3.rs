@@ -3,7 +3,12 @@ use std::collections::HashSet;
 
 static INPUT_TXT: &str = r".\inputs\year2022\day3.txt";
 
-pub fn part1() {
+pub fn run() {
+    part1();
+    part2();
+}
+
+fn part1() {
     let raw_lines = common::read_file_to_vec_of_strings(&INPUT_TXT);
 
     //code to solve
@@ -25,7 +30,7 @@ pub fn part1() {
     println!("{sum_of_duplicate_priorities}")
 }
 
-pub fn part2() {
+fn part2() {
     let raw_lines = common::read_file_to_vec_of_strings(&INPUT_TXT);
 
     let mut sum_of_badge_priorities: u32 = 0;

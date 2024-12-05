@@ -2,7 +2,12 @@ use crate::common;
 
 static INPUT_TXT: &str = r".\inputs\year2022\day2.txt";
 
-pub fn part1() {
+pub fn run() {
+    part1();
+    part2();
+}
+
+fn part1() {
     let raw_lines = common::read_file_to_vec_of_strings(&INPUT_TXT);
 
     let tuple_vec = parse_lines_to_char_tuples(&raw_lines);
@@ -12,7 +17,7 @@ pub fn part1() {
     println!("Your final score is {score}")
 }
 
-pub fn part2() {
+fn part2() {
     let raw_lines = common::read_file_to_vec_of_strings(&INPUT_TXT);
 
     let input_tuple_vec = parse_lines_to_char_tuples(&raw_lines);
