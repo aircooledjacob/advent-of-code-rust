@@ -1,9 +1,10 @@
+
 use inquire::Select;
 
-pub mod day1;
-pub mod day2;
-pub mod day3;
-pub mod day4;
+mod day1;
+mod day2;
+mod day3;
+mod day4;
 
 pub fn menu() {
     let days: Vec<u8> = (1..5).collect();
