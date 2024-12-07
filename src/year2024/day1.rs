@@ -18,10 +18,10 @@ fn part1() {
             (
                 str_1
                     .parse::<u32>()
-                    .expect(str_1),
+                    .expect("could not parse input to u32"),
                 str_2
                     .parse::<u32>()
-                    .expect("alpha character found in input, numbers only"),
+                    .expect("could not parse input to u32"),
             )
         })
         .unzip();
