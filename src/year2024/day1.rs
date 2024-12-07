@@ -1,3 +1,4 @@
+use std::arch::x86_64::_addcarryx_u32;
 use crate::common;
 
 static INPUT_TXT: &str = r".\inputs\year2024\day1.txt";
@@ -10,22 +11,40 @@ pub fn run() {
 fn part1() {
     let raw_lines = common::read_file_to_vec_of_strings(&INPUT_TXT);
 
-    let (list_1, list_2): (Vec<u16>, Vec<u16>) = raw_lines
+    let (mut list_1, mut list_2): (Vec<u32>, Vec<u32>) = raw_lines
         .iter()
         .map(|line| line.split_once("   ").expect("input file malformed"))
         .map(|(str_1, str_2)| {
             (
                 str_1
-                    .parse::<u16>()
-                    .expect("alpha character found in input, numbers only"),
+                    .parse::<u32>()
+                    .expect(str_1),
                 str_2
-                    .parse::<u16>()
+                    .parse::<u32>()
                     .expect("alpha character found in input, numbers only"),
             )
         })
         .unzip();
+    
+    list_1.sort();
+    list_2.sort();
+    
+    let zipped_sorted_lists = list_1.iter().zip(list_2.iter());;
+    let mut distance_sum:u64 = 0;
+    
+    for (list_item_1, list_item_2) in zipped_sorted_lists {
+        let diff:u32 ;
+        if list_item_1 > list_item_2 {
+            diff = list_item_1 - list_item_2 ;
+        } else if list_item_1 < list_item_2 {
+            diff = list_item_2 - list_item_1 ;
+        } else {
+            diff = 0;
+        }
+        distance_sum += diff as u64;
+    }
 
-    println!("Part 1: total distances between the lists: ")
+    println!("Part 1: total distances between the lists: {distance_sum}")
 }
 
 fn part2() {
