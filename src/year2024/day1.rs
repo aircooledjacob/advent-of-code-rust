@@ -1,7 +1,7 @@
 use crate::common;
 use std::collections::HashMap;
 
-static INPUT_TXT: &str = r".\inputs\year2024\day1.txt";
+static INPUT_TXT: &str = r"./inputs/year2024/day1.txt";
 
 pub fn run() {
     part1();

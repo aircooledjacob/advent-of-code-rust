@@ -2,7 +2,7 @@ use crate::common;
 use regex::Regex;
 use std::ops::RangeInclusive;
 
-static INPUT_TXT: &str = r".\inputs\year2022\day4.txt";
+static INPUT_TXT: &str = r"./inputs/year2022/day4.txt";
 
 pub fn run() {
     part1();

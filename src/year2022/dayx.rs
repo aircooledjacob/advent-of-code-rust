@@ -2,7 +2,7 @@
 #[allow(clippy::all)]
 use crate::common;
 
-static INPUT_TXT: &str = r".\inputs\year2022\dayX.txt";
+static INPUT_TXT: &str = r"./inputs/year2022/dayX.txt";
 
 pub fn run() {
     part1();

@@ -1,6 +1,6 @@
 use crate::common;
 
-static INPUT_TXT: &str = r".\inputs\year2022\day1.txt";
+static INPUT_TXT: &str = r"./inputs/year2022/day1.txt";
 
 pub fn run() {
     part1();

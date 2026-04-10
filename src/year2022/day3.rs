@@ -1,7 +1,7 @@
 use crate::common;
 use std::collections::HashSet;
 
-static INPUT_TXT: &str = r".\inputs\year2022\day3.txt";
+static INPUT_TXT: &str = r"./inputs/year2022/day3.txt";
 
 pub fn run() {
     part1();

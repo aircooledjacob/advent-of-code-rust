@@ -6,7 +6,8 @@ fn main() {
     let mut user_requested_exit = false;
 
     while !user_requested_exit {
-        let selected_year: &str = Select::new("Which year would you like to run?", years.clone())
+        let selected_year: &str =
+            Select::new("Which year would you like to run?", years.clone())
             .prompt()
             .expect("There was an error, please try again");
 
