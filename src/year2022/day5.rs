@@ -114,7 +114,6 @@ fn follow_instructions(
     instructions: Vec<(usize, usize, usize)>,
     mut crate_stacks: Vec<Vec<char>>,
 ) -> Vec<Vec<char>> {
-
     for (number_of_crates, from_stack, to_stack) in instructions {
         for _ in 0..number_of_crates {
             let temp_crate = crate_stacks[from_stack - 1].pop().unwrap();
@@ -125,18 +124,14 @@ fn follow_instructions(
     crate_stacks
 }
 
-fn check_crates_on_top (crate_stacks: Vec<Vec<char>>) -> Vec<char> {
-
+fn check_crates_on_top(crate_stacks: Vec<Vec<char>>) -> Vec<char> {
     let mut top_crates: Vec<char> = Vec::new();
-
 
     for mut stack in crate_stacks {
         top_crates.push(stack.pop().unwrap());
     }
 
-
     top_crates
-
 }
 
 fn part1() {
@@ -148,7 +143,9 @@ fn part1() {
 
     let rearranged_crate_stacks = follow_instructions(instructions, crate_stacks);
 
-    let answer:String = check_crates_on_top(rearranged_crate_stacks).iter().collect();
+    let answer: String = check_crates_on_top(rearranged_crate_stacks)
+        .iter()
+        .collect();
 
     println!("Part 1: answer: {answer}")
 }
