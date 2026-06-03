@@ -42,23 +42,18 @@ fn part2() {
     list_1.sort();
     list_2.sort();
 
-    let frequency_map = list_2
-        .iter()
-        .copied()
-        .fold(HashMap::new(), |mut map, val| {
-        map.entry(val)
-            .and_modify(| frq| *frq += 1)
-            .or_insert(1);
+    let frequency_map = list_2.iter().copied().fold(HashMap::new(), |mut map, val| {
+        map.entry(val).and_modify(|frq| *frq += 1).or_insert(1);
         map
     });
-    
-    let mut similarity_score_sum:u32 = 0;
+
+    let mut similarity_score_sum: u32 = 0;
     for num in list_1 {
         match frequency_map.get(&num) {
             Some(frequency) => {
                 similarity_score_sum += num * frequency;
             }
-            None => ()
+            None => (),
         }
     }
 
@@ -76,7 +71,6 @@ fn parse_input_lists(raw_lines: Vec<String>) -> (Vec<u32>, Vec<u32>) {
             )
         })
         .unzip();
-    
+
     (list_1, list_2)
-    
 }
