@@ -3,8 +3,6 @@ use regex::Regex;
 
 static INPUT_TXT: &str = r"./inputs/year2022/day5.txt";
 
-const STACKS: usize = 9;
-
 pub fn run() {
     part1();
     part2();
