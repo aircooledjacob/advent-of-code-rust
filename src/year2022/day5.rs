@@ -116,6 +116,21 @@ fn follow_instructions(
     crate_stacks
 }
 
+fn follow_instructions_pt2(
+    instructions: Vec<(usize, usize, usize)>,
+    mut crate_stacks: Vec<Vec<char>>,
+) -> Vec<Vec<char>> {
+    for (number_of_crates, from_stack, to_stack) in instructions {
+        let from_stack_range = crate_stacks[from_stack - 1].len() - number_of_crates .. crate_stacks[from_stack - 1].len();
+        let mut temp_crates: Vec<char> = crate_stacks[from_stack - 1].drain(from_stack_range).collect();
+        crate_stacks[to_stack - 1].append(&mut temp_crates)
+
+    }
+
+    crate_stacks
+
+}
+
 fn check_crates_on_top(crate_stacks: Vec<Vec<char>>) -> Vec<char> {
     let mut top_crates: Vec<char> = Vec::new();
 
@@ -145,8 +160,15 @@ fn part1() {
 fn part2() {
     let raw_lines = common::read_file_to_vec_of_strings(&INPUT_TXT);
 
-    //code to solve
-    let answer = String::from("answer");
+    let crate_stacks = parse_crate_stacks(&raw_lines);
+
+    let instructions = parse_instructions(&raw_lines);
+
+    let rearranged_crate_stacks = follow_instructions_pt2(instructions, crate_stacks);
+
+    let answer: String = check_crates_on_top(rearranged_crate_stacks)
+        .iter()
+        .collect();
 
     println!("Part 2: answer: {answer}")
 }
