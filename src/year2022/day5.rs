@@ -50,23 +50,17 @@ fn parse_crate_stacks(raw_lines: &Vec<String>) -> Vec<Vec<char>> {
         if !line.starts_with("[") {
             break;
         };
-
         let mut stack_index: usize = 1;
-
         for i in 0..number_of_stacks {
-            crate_stacks[i].insert(0, line.chars().nth(stack_index).unwrap_or(' '));
-
+            let c = line.chars().nth(stack_index).unwrap_or(' ');
+            if c != ' ' {
+                crate_stacks[i].insert(0, c);
+            }
             stack_index += 4
         }
     }
 
-    // remove blanks:
-    let mut filtered_crate_stacks: Vec<Vec<char>> = vec![Vec::new(); number_of_stacks];
-    for (i, stack) in crate_stacks.into_iter().enumerate() {
-        filtered_crate_stacks[i] = stack.into_iter().filter(|c| *c != ' ').collect();
-    }
-
-    filtered_crate_stacks
+    crate_stacks
 }
 
 fn parse_instructions(raw_lines: &Vec<String>) -> Vec<(usize, usize, usize)> {
