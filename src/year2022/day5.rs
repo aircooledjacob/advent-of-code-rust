@@ -121,14 +121,15 @@ fn follow_instructions_pt2(
     mut crate_stacks: Vec<Vec<char>>,
 ) -> Vec<Vec<char>> {
     for (number_of_crates, from_stack, to_stack) in instructions {
-        let from_stack_range = crate_stacks[from_stack - 1].len() - number_of_crates .. crate_stacks[from_stack - 1].len();
-        let mut temp_crates: Vec<char> = crate_stacks[from_stack - 1].drain(from_stack_range).collect();
+        let from_stack_range = crate_stacks[from_stack - 1].len() - number_of_crates
+            ..crate_stacks[from_stack - 1].len();
+        let mut temp_crates: Vec<char> = crate_stacks[from_stack - 1]
+            .drain(from_stack_range)
+            .collect();
         crate_stacks[to_stack - 1].append(&mut temp_crates)
-
     }
 
     crate_stacks
-
 }
 
 fn check_crates_on_top(crate_stacks: Vec<Vec<char>>) -> Vec<char> {

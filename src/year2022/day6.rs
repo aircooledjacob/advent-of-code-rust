@@ -1,5 +1,5 @@
-use std::collections::HashSet;
 use crate::common;
+use std::collections::HashSet;
 
 static INPUT_TXT: &str = r"./inputs/year2022/day6.txt";
 
@@ -16,23 +16,23 @@ fn part1() {
     let mut index: Option<usize> = None;
 
     //code to solve
-    for i in 0..s.len()-3 {
-
+    for i in 0..s.len() - 3 {
         let unique_chars: HashSet<char> = s.chars().skip(i).take(4).collect();
 
         if unique_chars.len() == 4 {
-            index = Some(i+4);
-            break
+            index = Some(i + 4);
+            break;
         }
-
     }
 
     match index {
-        Some(i) => {println!("Part 1: answer: {i}");}
-        None => {println!("Error: No Match Found");}
-
+        Some(i) => {
+            println!("Part 1: answer: {i}");
+        }
+        None => {
+            println!("Error: No Match Found");
+        }
     }
-
 }
 
 fn part2() {
@@ -43,21 +43,21 @@ fn part2() {
     let mut index: Option<usize> = None;
 
     //code to solve
-    for i in 0..s.len()-13 {
-
+    for i in 0..s.len() - 13 {
         let unique_chars: HashSet<char> = s.chars().skip(i).take(14).collect();
 
         if unique_chars.len() == 14 {
-            index = Some(i+14);
-            break
+            index = Some(i + 14);
+            break;
         }
-
     }
 
     match index {
-        Some(i) => {println!("Part 2: answer: {i}");}
-        None => {println!("Error: No Match Found");}
-
+        Some(i) => {
+            println!("Part 2: answer: {i}");
+        }
+        None => {
+            println!("Error: No Match Found");
+        }
     }
-
 }
