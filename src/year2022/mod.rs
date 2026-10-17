@@ -7,9 +7,10 @@ mod day4;
 mod day5;
 mod day6;
 mod day7;
+mod day8;
 
 pub fn menu() {
-    let days: Vec<u8> = (1..8).collect();
+    let days: Vec<u8> = (1..9).collect();
     let selected_day = Select::new("Which day would you like to run", days)
         .prompt()
         .expect("There was an error, please try again");
@@ -22,6 +23,7 @@ pub fn menu() {
         5 => day5::run(),
         6 => day6::run(),
         7 => day7::run(),
+        8 => day8::run(),
 
         _ => panic!("Unknown day selected / day not implemented yet"),
     }
